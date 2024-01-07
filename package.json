@@ -2,7 +2,7 @@
   "name": "linkall",
   "version": "1.0.0",
   "description": "just for everyone, but not now",
-  "main": "newWallet.js",
+  "main": "sky.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/buttonwild/linkAll#readme",
   "dependencies": {
-    "ethers": "^6.9.2"
+    "ethers": "^6.9.2",
+    "node-fetch": "^3.3.2",
+    "random-useragent": "^0.5.0"
   },
   "type": "module"
 }
