@@ -1,0 +1,23 @@
+{
+  "name": "linkall",
+  "version": "1.0.0",
+  "description": "just for everyone, but not now",
+  "main": "newWallet.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buttonwild/linkAll.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/buttonwild/linkAll/issues"
+  },
+  "homepage": "https://github.com/buttonwild/linkAll#readme",
+  "dependencies": {
+    "ethers": "^6.9.2"
+  },
+  "type": "module"
+}
