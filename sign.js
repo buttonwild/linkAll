@@ -1,6 +1,6 @@
 //填入你的地址和私钥即可  address privateKey
 
-import ethers from "ethers";
+import { ethers } from "ethers";
 import fetch from 'node-fetch';
 import randomUserAgent from 'random-useragent';
 
@@ -118,8 +118,30 @@ async function startLoginWithRetry(maxRetries = 3) {
     }
 }
 
+async function checkinWithRetry(maxRetries = 3) {
+    let retries = 0;
+    const retryInterval = 1000; // 1秒间隔
+
+    async function doCheckin() {
+        try {
+            const result = await checkin();
+            return result;
+        } catch (error) {
+            if (retries < maxRetries) {
+                console.error(`Error during checkin, retrying in ${retryInterval / 1000} seconds...`);
+                await new Promise((resolve) => setTimeout(resolve, retryInterval));
+                retries++;
+                return doCheckin(); // 递归调用重试
+            } else {
+                throw new Error(`Maximum retry limit (${maxRetries}) reached. Error: ${error.message}`);
+            }
+        }
+    }
+
+    return doCheckin();
+}
+
 async function checkin() {
-    // 签到
     const host = 'https://apisky.ntoken.bwtechnology.net/api/{}';
     const url = host.replace('{}', 'checkIn_skyGate_member.php');
     const payload = {
@@ -148,6 +170,7 @@ async function checkin() {
     return result;
 }
 
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -157,7 +180,7 @@ async function main() {
     try {
         await getJWT(); // 等待getJWT完成
         await startLoginWithRetry(); // 等待startLogin完成
-        await checkin();
+        await checkinWithRetry();
     } catch (error) {
         console.error(error);
     }
