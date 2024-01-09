@@ -8,5 +8,5 @@ just for everyone, but not now
 
 ~~第二个脚本是链上签名~~
 
-~~第三个是skyark自动化脚本~~
+~~第三个是skyark自动化脚本(已完成签到和自动开宝箱)~~
 
