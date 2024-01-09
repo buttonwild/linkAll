@@ -14,4 +14,6 @@ just for everyone, but not now
 
 安装node.js
 
+修改mydata.js中的数据
+
 运行signAndCollect.js
