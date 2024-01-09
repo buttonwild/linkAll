@@ -3,10 +3,9 @@ import { ethers } from "ethers";
 
 // 连接到以太坊网络
 const opbnb_URL = 'https://opbnb.publicnode.com';
-const provider = new ethers.JsonRpcProvider(ALCHEMY_GOERLI_URL);
+const provider = new ethers.JsonRpcProvider(opbnb_URL);
 
-// 利用私钥和provider创建wallet对象
-const privateKey = ''
+const privateKey = '';
 const wallet = new ethers.Wallet(privateKey, provider)
 
 // WETH合约的ABI和地址

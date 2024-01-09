@@ -2,9 +2,10 @@
   "name": "linkall",
   "version": "1.0.0",
   "description": "just for everyone, but not now",
-  "main": "sky.js",
+  "main": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "script1": "node sign.js",
+    "script2": "node sky.js"
   },
   "repository": {
     "type": "git",
