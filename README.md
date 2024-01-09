@@ -10,3 +10,8 @@ just for everyone, but not now
 
 ~~第三个是skyark自动化脚本(已完成签到和自动开宝箱)~~
 
+## 2. 运行方式
+
+安装node.js
+
+运行signAndCollect.js
